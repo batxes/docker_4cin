@@ -64,3 +64,17 @@ RUN chmod +x /opt/chimera-1.11.2-linux_x86_64.bin
 #RUN /opt/chimera-1.11.2-linux_x86_64.bin
 #set link in /usr/bin
 #RUN ln -s /opt/UCSF/Chimera/chimera chimera /usr/bin/chimera
+
+RUN cd /opt && git clone http://github.com/batxes/4Cin
+RUN ln -s /opt/4Cin/4Cin.py /usr/bin/4Cin.py
+RUN ln -s /opt/4Cin/src/data_manager.py /usr/bin/data_manager.py
+RUN ln -s /opt/4Cin/src/paint_model.py /usr/bin/paint_model.py
+RUN ln -s /opt/4Cin/src/prepare_data.py /usr/bin/prepare_data.py
+RUN ln -s /opt/4Cin/src/calculate_boundaries.py /usr/bin/calculate_boundaries.py
+RUN ln -s /opt/4Cin/src/prepare_data /usr/bin/prepare_data.py
+RUN ln -s /opt/4Cin/src/calculate_vhic_from_realdata.py /usr/bin/calculate_vhic_from_realdata.py
+RUN ln -s /opt/4Cin/src/Mut_comp.py /usr/bin/Mut_comp.py
+RUN ln -s /opt/4Cin/src/HiC_comp.py /usr/bin/HiC_comp.py
+RUN ln -s /opt/4Cin/src/Evo_comp.py /usr/bin/Evo_comp.py
+
+ENV PATH $PATH:/usr/bin/
